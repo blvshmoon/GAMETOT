@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ular Tangga 💗</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <h2>Ular Tangga 💗</h2>
+
+  <div class="room-box">
+    <button onclick="createRoom()">Buat Room</button>
+    <input id="roomInput" placeholder="Kode Room">
+    <button onclick="joinRoom()">Join</button>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <div class="bottom">
+    <div class="dice" id="dice">🎲</div>
+    <div id="info">Giliran: Player 1</div>
+    <button onclick="rollDice()">Lempar Dadu 🎲</button>
+  </div>
+</div>
+
+<!-- POPUP -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3 id="eventTitle"></h3>
+    <p id="eventText"></p>
+    <button onclick="closeModal()">Oke 💗</button>
+  </div>
+</div>
+
+<!-- 🔔 SOUND -->
+<audio id="tingSound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+
+<!-- SCRIPT -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
