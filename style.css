@@ -1,0 +1,166 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  height:100%;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#ff9ecf,#e0c3fc);
+  display:flex;
+  justify-content:center;
+}
+
+.app{
+  width:100%;
+  max-width:420px;
+  padding:15px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+h2{
+  color:white;
+  margin-bottom:12px;
+  text-shadow:0 0 20px hotpink;
+}
+
+.room-box{
+  width:100%;
+  display:flex;
+  gap:6px;
+  margin-bottom:10px;
+}
+
+.room-box input{
+  flex:1;
+  padding:10px;
+  border-radius:12px;
+  border:none;
+}
+
+.board{
+  width:100%;
+  aspect-ratio:1/1;
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  grid-template-rows:repeat(10,1fr);
+  gap:4px;
+  margin-bottom:15px;
+}
+
+.cell{
+  background:white;
+  border-radius:17px;
+  font-size:15px;
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+  padding:4px;
+  position:relative;
+  box-shadow:0 0 8px rgba(255,105,180,0.3);
+}
+
+.icon{
+  position:absolute;
+  bottom:4px;
+  right:4px;
+}
+
+.player{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  position:absolute;
+  bottom:4px;
+  left:50%;
+  transform:translateX(-50%);
+  transition:0.2s;
+}
+
+.p1{background:hotpink;}
+.p2{background:deepskyblue;}
+
+.bottom{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  margin-bottom:30px;
+}
+
+#info{
+  color:white;
+  font-weight:bold;
+}
+
+.dice{
+  font-size:55px;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(90deg,hotpink,#ff6ec7);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:active{
+  transform:scale(0.96);
+}
+
+/* ===== MODAL BACKGROUND ===== */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  z-index:999; /* 🔥 penting biar muncul di atas */
+}
+
+/* ===== POPUP ===== */
+.modal-content{
+  background:white;
+  width:100%;
+  max-width:90vw;
+  max-height:80vh;
+  overflow-y:auto;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+
+  border:2px solid hotpink;
+
+  animation: neonGlow 1.5s infinite alternate;
+}
+
+/* ===== TEKS ===== */
+#eventTitle{
+  color:hotpink;
+  font-size:20px;
+}
+
+#eventText{
+  margin-top:10px;
+  line-height:1.5;
+}
+
+/* ===== ANIMASI NEON ===== */
+@keyframes neonGlow{
+  from{
+    box-shadow:0 0 10px hotpink, 0 0 20px hotpink;
+  }
+  to{
+    box-shadow:0 0 20px deeppink, 0 0 40px deeppink;
+  }
+}
